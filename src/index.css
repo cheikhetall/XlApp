@@ -1,13 +1,78 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Macondo&family=Roboto:wght@300&display=swap');
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family:"Macondo";
+  color: black;
+}
+.Home-container{
+  display: grid;
+    grid-gap:10px;
+    grid-auto-rows: minmax(100px,auto);
+ grid-template-columns: 1fr 2fr 1fr;
+background-color: rgba(51, 51, 51, 0.896);
+
+}
+.Home-container > div {
+  background-color:beige;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+.Navbar{
+background-color: rgb(51, 51, 51);
+
+  display: flex;
+ padding: 50px; ;
+  height: 10px
+}
+.Navbar a{
+  color: gray;
+  margin:20px
+}
+.Scrollingbar{
+  grid-column: 1 / -1;
+}
+.MerchBox{
+  grid-column: 1/-1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.Xlmembers{
+margin: 70px 0px 70px 0px;
+  grid-row: span 4;
+} 
+
+ .SongBox{
+ grid-row: span 4;
+ margin: 70px 0px 70px 0px;
 }
+
+ .BigBar{
+  grid-row: span 4;
+}
+.Signup{
+  display: flex;
+ justify-content: center; 
+}
+
+.signupForm{
+background-color:blue;
+min-width: 400px;
+max-width: 600px;
+padding: 50px 30px;
+}
+
+
+ @media all and (max-width:800px) {
+  .Xlmembers{
+    display: none;
+  }
+  .Verticalbar{
+    display: none;
+  }
+  .SongBox{
+    display:none;
+   }
+}  
