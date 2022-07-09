@@ -2,7 +2,7 @@
 const ScrollingBar = () => {
     return (  
         <div className="Scrollingbar">
-            broski
+            <div className="ScrollbarImageBox"></div>
         </div>
 
     );
