@@ -1,22 +1,36 @@
 
 const Cloth=require('../models/cloth.model')
 
+const fs=require('fs')
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
+  console.log(req.body.text)
+
+
     // if (!req.body.title) {
     //     res.status(400).send({ message: "Content can not be empty!" });
     //     return;
     //   }
-      console.log(req.body.text)
-      // Create a Tutorial
+   
+    
       const newCloth = new Cloth({
-        "text": req.body.text
+        text:req.body.text,
+        img:{
+          data:fs.readFileSync("images/"+req.file.filename),
+          contentType:"image/png"
+        },
+        seasons:req.body.seasons ,
+        gender:req.body.gender,
+        type:req.body.type,
+        discount:req.body.discount,
       });       
+    
       // Save Tutorial in the database
-      console.log(newCloth)
+      
       newCloth
         .save()
         .then(data => {
+          console.log("worked")
           res.send(data);
         })
         .catch(err => {
@@ -27,8 +41,9 @@ exports.create = (req, res) => {
         });
 };
 // Retrieve all Tutorials from the database.
-exports.findAll = (req, res) => {
-  
+exports.findAll = async (req, res) => {
+  let fonem=await Cloth.find()
+  res.send(fonem)
 };
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
