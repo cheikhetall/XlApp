@@ -9,7 +9,7 @@ import { useState,useEffect } from "react";
 import Gender from "../component/Gender";
 
 function Home() {
-const [allClothes,setAllClothes]=useState(null)
+const [allClothes,setAllClothes]=useState()
 
 useEffect(()=>{
  clothService.getAll()
@@ -21,7 +21,7 @@ useEffect(()=>{
 
   return (
 <div className="Home-container">
-    {allClothes && <>
+    {allClothes  && <>
   <Gender/>
      <ScrollinBar props={allClothes} />
      
