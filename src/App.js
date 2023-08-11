@@ -10,10 +10,11 @@ import Signup from './routes/Signup';
 import Addclothe from './adminComponent/Addclothe';
 
 const App = () => {
-  return ( <div>
+  return ( <div className="mainDiv">
 
 <BrowserRouter>
 <Navbar/>
+
     <Routes>
     <Route path="/">
     <Route path="/Home" element={<Home/>}></Route>
